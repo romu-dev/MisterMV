@@ -1,0 +1,366 @@
+
+/* ------------------------- typos -----------------------------------*/
+
+/* 3 typos donc 3 @fontface */
+@font-face {
+    font-family: "Montserrat-Regular"; 
+    src: url("fonts/Montserrat-Regular.ttf"); 
+}
+@font-face {
+    font-family: "Montserrat-SemiBold"; 
+    src: url("fonts/Montserrat-SemiBold.ttf"); 
+}
+@font-face {
+    font-family: "Montserrat-Bold"; 
+    src: url("fonts/Montserrat-Bold.ttf"); 
+}
+
+@font-face {
+    font-family: "abode"; 
+    src: url("fonts/JKAbode-usageperso.ttf"); 
+}
+
+@font-face {
+    font-family: "dcglitch"; 
+    src: url("fonts/DoctorGlitch.otf"); 
+}
+
+/* --------------------- Permet de définir les dimensions et propriétés de la page ----------------------*/
+
+body{
+    margin: 0px;
+    padding: 0px;
+
+    background: linear-gradient(#000000, #030303);
+    width: 90; /* permet de prendre 100% du viewport */
+    /*height: 100vh; /* viewport vh (height) vw (width : largeur) avec une valeur relative 100 pour 100% */
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16pt;
+    line-height: 1.3em;
+    font-family: "Montserrat-Regular", Verdana, Tahoma, sans-serif;
+    color: #d5d5d5;
+    
+    /*border: 5px solid red;*/
+    text-align: center;
+    
+}
+
+
+/* ----------------------- Couleur des liens ---------------------- */
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+}
+
+
+/* cta */
+.cta{
+    width: 150px;
+    height: auto;
+    font-size: 12pt;
+    font-weight: bolder;
+    font-family: "Montserrat-Regular", Verdana, Tahoma, sans-serif;
+    color: #d5d5d5;
+    text-transform: uppercase;
+    padding: 15px;
+
+    background-color: #6e14c1;
+}
+/* --------------------------------------------------------------
+                            HEADER
+---------------------------------------------------------------- */
+
+/* emplacement logo */
+.haut{
+    width: 100%;
+    max-height: 142px;
+    margin: auto;
+    background-color: #100b17;
+        /*border: 3px solid rgb(204, 185, 185);*/
+}
+.haut img{
+    width: auto;
+    height: 100px;
+}
+
+
+/* Création du menu simple */
+nav{
+    margin: 0px auto;
+    width: 100%;
+    background-color: #100b17;
+    border-top: 1px solid #9f9da2;
+    border-right: 0px solid #9f9da2;
+    border-bottom: 0px solid #9f9da2;
+    border-left: 0px solid #9f9da2;
+
+    /*border-top: 1px solid #9f9da2;*/
+
+    position: sticky;
+    top: 0px;
+}
+
+/*Création de cette div juste pour assurer le centrage des cases liens dans la nav*/
+.pourcentrer{
+    display: flex;
+    width: 100%;
+    margin: auto; 
+    text-align: center;
+    justify-content: center;
+    
+    background-color: #100b17;
+    
+    /*border: 3px solid rgb(204, 185, 185);*/
+}
+
+nav > div > ul{
+    margin: 0px;
+    padding: 0px;
+
+    /*border: 1px solid  rgb(255, 0, 191);*/
+}
+
+nav div ul li{
+    float: left; /* élément flottant à gauche */
+    /* quand un élément parent est non flottant (ici ul) et comporte des enfants flottant (ici li), celui-ci ne s'affiche plus car il perd sa hauteur*/
+    /* pour résoudre ce problème, on pourrait mettre un élément hidden mais pas dans ce cas, sinon on ne verra plus nos sous-menu par la suite : ils seront hidden*/
+    position : relative;
+    
+    /*border: 1px solid  rgb(9, 255, 0);*/
+
+}
+
+/* la solution est la suivante  clearx 
+Synthaxe compliquée et immuable pour corriger notre problème.
+C'est une fonction difficile à retrouver, qu'il faut connaître */
+nav div ul::after{
+    content: ""; /* création d'un contenu vide */
+    display: block;
+    clear: both; 
+}
+
+
+/* ----------------------------------------------------- liens du menu */
+
+nav div ul li a{ 
+    padding: 20px 30px;
+    font-size: 14pt;
+    font-weight: normal;
+    color: #9f9da2;
+}
+nav div ul li a:hover{ 
+    padding: 20px 30px 15px 30px; /* rectification de padding */
+    border-bottom: 5px solid #8820e8;
+    font-weight: bolder;
+    color: #d5d5d5;
+}
+
+nav li{ 
+    list-style-type: none;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 12pt;
+    color: #9f9da2;
+}
+
+/* ----------------------------------------------------- liens du sous-menu */
+
+.submenu{
+    font-size: 14pt;
+    font-weight: normal;
+    color: #9f9da2;
+}
+
+.submenu li{
+    width: 200px;
+    height: 40px;
+    padding: 0px 10px;
+    text-transform: none;
+    text-align: left;
+    font-weight: normal;
+    border: 0px;
+    color: #d5d5d5;
+}
+
+.submenu li a:hover{ /* état des cases du sous-menu au survol */
+    border: 0px;
+}
+
+/* ----------------------------------- */
+
+
+nav a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 15px;
+}
+
+nav li:hover .submenu{ /* affichage du sous-menu */
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+
+.submenu{
+    display: none; /* cache les div de sous-menu nommées "submenu" */
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/* -------------------------------------------------------------------------------
+                              Contenu de la page
+  ----------------------------------------------------------------------------------------*/
+
+/* ---------------page 404 -------------*/
+
+
+
+
+.page404{
+    width: 80%;
+    /*height: 100vh;*/
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /*align-items: flex-end;*/
+    flex-wrap: wrap;
+
+    margin: auto;
+
+    /*border: 3px solid green;*/
+}
+
+.page404:nth-child(){
+    display: inline-block;
+    width: 200px;
+    /*height: 50px;
+    margin: 20px 5px 5px 5px;*/
+
+    /*border: 3px solid green;*/
+}
+
+.Titre404{
+    font-size: 300px;
+    font-family: "dcglitch", Verdana, Tahoma, sans-serif;
+    color: #d5d5d5;
+    border: 3px solid green;
+
+    /*width: 768px;
+    height: 500px;*/
+}
+
+.error{
+    font-size: 30px;
+    font-family: "dcglitch", Verdana, Tahoma, sans-serif;
+    color: #d5d5d5;
+
+    border: 3px solid green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------------------
+                            FOOTER
+---------------------------------------------------------------- */
+
+footer{
+    width: 100%;
+    height: 240px;
+    /*background-color: #100b17;*/
+    text-align: center;
+    font-size: 14pt;
+    color: #d5d5d5;
+
+    border-top: 0px solid #9f9da2;
+    border-right: 0px solid #9f9da2;
+    border-bottom: 1px solid #9f9da2;
+    border-left: 0px solid #9f9da2;
+    /*border: 5px solid red;*/
+}
+footer a{
+    text-decoration: none;
+    font-size: 12pt;
+    font-weight: normal;
+    color: #9f9da2;
+}
+footer a:hover{
+    text-decoration: none;
+    font-size: 12pt;
+    font-weight: bolder;
+    color: #d5d5d5;
+}
+.liensfooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer .item_titre{
+    padding: 10px 0px 15px 0px;
+    text-transform: uppercase;
+}
+
+footer .rs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.rs img{
+    width: 36px;
+    padding: 0px 5px 10px 5px;
+}
+
+
+
+
+
+footer .credits{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+
+    /*background-color: #100b17;*/
+
+    width: 100%;
+    height: 40px;
+
+    font-size: 12px;       
+    /* padding-left: 40px; */ /* Si on active cela, on arrive sur un scroll horizontal à l'opposé de 40px */
+}
+
+.credits img{
+    display: inline-block;
+    height: 15px;
+    padding: 7px 5px 5px 5px;
+}
+
+.site{
+    margin-left: 40px;
+}
