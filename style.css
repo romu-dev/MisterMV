@@ -47,13 +47,39 @@ body{
     
 }
 
+h1 {
+    font-size: 48px;
+    font-family: "dcglitch", Verdana, Tahoma, sans-serif;
+    color: #d5d5d5;
+}
+
+h2 {
+    font-size: 40px;
+    font-family: "Montserrat-Bold", Verdana, Tahoma, sans-serif;
+    color: #d5d5d5;
+    text-transform: uppercase;
+    padding-top: 50px;
+}
+#accroche{
+    font-weight: bold;
+}
 
 /* ----------------------- Couleur des liens ---------------------- */
 a:link{
     text-decoration: none;
+    font-size: 12pt;
+    font-weight: bolder;
+    font-family: "Montserrat-Regular", Verdana, Tahoma, sans-serif;
+    color: #d5d5d5;
+    text-transform: uppercase;
 }
 a:visited{
     text-decoration: none;
+    font-size: 12pt;
+    font-weight: bolder;
+    font-family: "Montserrat-Regular", Verdana, Tahoma, sans-serif;
+    color: #d5d5d5;
+    text-transform: uppercase;
 }
 a:hover{
     text-decoration: none;
@@ -67,15 +93,23 @@ a:active{
 .cta{
     width: 150px;
     height: auto;
-    font-size: 12pt;
+    width: auto;
+    height: 15px;
+    font-size: 16pt;
     font-weight: bolder;
     font-family: "Montserrat-Regular", Verdana, Tahoma, sans-serif;
     color: #d5d5d5;
     text-transform: uppercase;
-    padding: 15px;
+    padding: 10px 15px 25px 15px;
+    margin: auto;
+    text-align: center;
+    /*margin-top: 50px;
+    margin-bottom: 50px;*/
 
     background-color: #6e14c1;
 }
+
+
 /* --------------------------------------------------------------
                             HEADER
 ---------------------------------------------------------------- */
@@ -179,12 +213,14 @@ nav li{
     font-size: 14pt;
     font-weight: normal;
     color: #9f9da2;
+    background-color: #000000;
+    
 }
 
 .submenu li{
-    width: 200px;
-    height: 40px;
-    padding: 0px 10px;
+    width: 250px;
+    height: 47px;
+    padding: 10px 10px;
     text-transform: none;
     text-align: left;
     font-weight: normal;
@@ -194,6 +230,10 @@ nav li{
 
 .submenu li a:hover{ /* état des cases du sous-menu au survol */
     border: 0px;
+    width: 70%;
+    border-bottom: 5px solid #8820e8;
+    padding-bottom: 5px;
+
 }
 
 /* ----------------------------------- */
@@ -227,60 +267,196 @@ nav li:hover .submenu{ /* affichage du sous-menu */
 
 /* ---------------page 404 -------------*/
 
-
-
-
 .page404{
-    width: 80%;
-    /*height: 100vh;*/
+    max-width: 100vw;
+    height: 75vh;
 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    /*align-items: flex-end;*/
     flex-wrap: wrap;
-
-    margin: auto;
-
-    /*border: 3px solid green;*/
+    align-items: center;
+    justify-content: center;
 }
-
-.page404:nth-child(){
-    display: inline-block;
-    width: 200px;
-    /*height: 50px;
-    margin: 20px 5px 5px 5px;*/
-
-    /*border: 3px solid green;*/
-}
-
 .Titre404{
-    font-size: 300px;
+    font-size: 200px;
     font-family: "dcglitch", Verdana, Tahoma, sans-serif;
     color: #d5d5d5;
-    border: 3px solid green;
-
-    /*width: 768px;
-    height: 500px;*/
+    margin-top: 10%;
 }
-
 .error{
     font-size: 30px;
     font-family: "dcglitch", Verdana, Tahoma, sans-serif;
     color: #d5d5d5;
+    margin-left: 30px;
+}
+.retour{
+    min-width: 90vw;
+}
 
-    border: 3px solid green;
+/* ---------------page à propos -------------*/
+
+
+.photocollab{
+    width: 100%;
+    height: 100vh;
+    min-height: 177px;
+    background-image: url("images/arcane-maxresdefault.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 50px;
+    font-size: 32px;
+    font-family: "Montserrat-Bold", Verdana, Tahoma, sans-serif;
+    color: #d5d5d5;
+    text-transform: uppercase;
+    line-height: 50px;
+    margin: auto;
+}
+
+
+/* --------------------------------------------------------------
+                             VITRINE
+----------------------------------------------------------------- 
+--------------------------------------------------------------
+--------------------------------------------------------------------
+--------------------------------------------------------------------------*/
+.couleurmv{
+    width: 100%;
+    background-color: #100b17;
+}
+.couleurkangoo{
+    width: 100%;
+    background-color: #9F9DAE;
+}
+
+#aproposvitrine{
+    /*background-color: #221831;*/
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+.parentvitrine{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /*align-content: flex-end;*/
+
+    flex-wrap: wrap;
+    margin: auto;
+    align-items: flex-end;
+    /*border: 2px solid green;*/
+}
+.enfantvitrine{
+    width:32%;
+    height: auto;
+    min-width: 360px;
+    text-align: center;
+    padding-top: 20px;
+
+    /*border: 2px solid rgb(0, 6, 128);*/
+}
+
+
+.parentvitrine img{
+    display: inline-block;
+    width: 80%;
+}
+#pourcta{
+    margin: auto;
+    align: center;
+}
+
+/* fin de vitrine -----------------*/
+
+#aproposmistermv{
+    /*background-color: #221831;*/
+    width: 80%;
+    text-align: center;
+    margin: auto;
+        /*border: 2px solid green;*/
+
+}
+.parentmv{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    align-items: center;
+    /*border: 2px solid green;*/
+}
+.enfantmg{
+    width: 32%;
+    height: auto;
+    min-width: 360px;
+    text-align: left;
+    /*margin-top: 50px;*/
+
+    /*border: 2px solid rgb(0, 6, 128);*/
+}
+.parentmv img{
+    display: inline-block;
+    width: 80%;
+}
+#pourcta{
+    margin: auto;
+    align: center;
+}
+
+
+section{
+    /*border: 2px solid yellow;*/
+    /*background-color: #9F9DAE;*/
+    margin: 10px 0px 100px 0px;
 }
 
 
 
+#aproposkangoo{
+    /*background-color: #9F9DAE;*/
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.parentkangoo{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    align-items: center;
 
+    /*border: 2px solid green;*/
+}
+.enfantkangoo{
+    width: 32%;
+    height: auto;
+    min-width: 360px;
+    text-align: left;
 
+    /*border: 2px solid rgb(0, 6, 128);*/
+}
+.parentkangoo img{
+    display: inline-block;
+    width: 100%;
+}
+#bloc4{
+    width: 100%;
+    min-width: 360px;
 
+}
 
-
-
-
+.lignebasse{
+    width: 80%;
+    height: 2px;
+    margin: auto;
+    padding: 50px;
+    border-bottom: 2px solid #6e14c1;
+    
+}
 
 
 
@@ -337,9 +513,6 @@ footer .rs{
 }
 
 
-
-
-
 footer .credits{
     display: flex;
     flex-direction: row;
@@ -354,13 +527,12 @@ footer .credits{
     font-size: 12px;       
     /* padding-left: 40px; */ /* Si on active cela, on arrive sur un scroll horizontal à l'opposé de 40px */
 }
-
 .credits img{
     display: inline-block;
     height: 15px;
     padding: 7px 5px 5px 5px;
 }
-
 .site{
     margin-left: 40px;
 }
+
